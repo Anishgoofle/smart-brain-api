@@ -2,7 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
-const http = require('http');
 const clarifai = require('clarifai');
 
 const app = express();
@@ -124,8 +123,6 @@ app.put('/image', (req, res) => {
 })
 
 
-let server = http.createServer(app)
-
-server.listen(app.get('port'), function(){
-	console.log(`app is running on PORT ` + server.address().port);
-});
+app.listen(process.env.PORT || 3000, () => {
+	console.log(`app is running on PORT ${process.env.PORT}`);
+})
