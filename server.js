@@ -27,6 +27,7 @@ const db = knex({
 app.use(bodyParser.json());
 app.use(cors())
 
+app.get('/', (req, res) => { res.send('it is working!')})
 //imageurl
 app.post('/imageurl', (req, res) => {
 	apps.models.predict(Clarifai.FACE_DETECT_MODEL,
