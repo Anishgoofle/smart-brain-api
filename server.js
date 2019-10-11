@@ -17,10 +17,12 @@ const knex = require("knex");
 const db = knex({
   client: "pg",
   connection: {
-    host: "postgresql-rectangular-88483", //127.0.0.1 for localhost
-    user: "postgres",
-    password: "admin",
-    database: "smartbrain_db"
+    // host: "postgresql-rectangular-88483", //127.0.0.1 for localhost
+    // // user: "postgres",
+    // // password: "admin",
+    // // database: "smartbrain_db"
+    host: process.env.DATABASE_URL,
+    ssl: true
   }
 });
 
