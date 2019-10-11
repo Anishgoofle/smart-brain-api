@@ -7,7 +7,7 @@ const clarifai = require("clarifai");
 const app = express();
 
 const apps = new Clarifai.App({
-  apiKey: "a070ae18896c4d9d95d914fd5bb91386"
+  apiKey: process.env.API_KEY
 });
 
 const port = process.env.PORT || 3000;
