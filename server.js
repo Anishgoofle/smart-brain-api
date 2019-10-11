@@ -21,7 +21,7 @@ const db = knex({
     // // user: "postgres",
     // // password: "admin",
     // // database: "smartbrain_db"
-    host: process.env.DATABASE_URL,
+    connectionString: process.env.DATABASE_URL,
     ssl: true
   }
 });
